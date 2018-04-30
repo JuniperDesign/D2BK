@@ -1,0 +1,128 @@
+{% extends 'templates/about.twig' %}
+
+{% block content %}
+<div class="hero">
+  <div class="hero-panel">
+    <div class="hero-heading">
+      <h2>About us</h2>
+      <h3>
+        Our Mission
+        <br>
+        To Spread Kindness
+      </h3>
+    </div>
+  </div>
+</div>
+<div class="tab-wrapper">
+  <div class="tab-row row">
+    <div class="tab-nav">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab col s3"><a href="#mission" class="active">Our Mission</a></li>
+        <li class="tab col s3"><a href="#team">Our Team</a></li>
+        <li class="tab col s3"><a href="#location">Location</a></li>
+      </ul>
+    </div>
+    <div id="mission" class="col s12">
+      <section class="intro-text">
+        <blockquote>
+          The mission of “#DaretobeKind - a Global Movement” is to reveal how Kindness can be used in practical ways to build safer communities and healthier relationships.
+        </blockquote>
+        <p>We believe one person’s purposeful act of Kindness within a two-mile radius can launch positive and exceptional outcomes within governments, industries, justice systems, and throughout every sector of society.</p>
+      </section>
+      <hr>
+      <section class="stats">
+        <div class="group-item">
+          <div class="stat">Our Roots</div>
+          <p>Gabriella van Rij [pronounced “ray”] articulated what would become the #DaretobeKind movement in 2010, while writing her first book, <span style="font-style:italic;">With All My Might</span>.</p>
+        </div>
+        <div class="group-item">
+          <div class="stat">You + Us</div>
+          <p>By providing a platform for sharing Kindness ideas and inspirational readers’ stories, our aim is to shift everyone into becoming Kindness Instigators.</p>
+        </div>
+        <div class="group-item">
+          <div class="stat">Impact</div>
+          <p>Every inspiring story that showcases the good in humanity sparks further ideas of how we each can #BEthedifference in our corner of the globe.</p>
+        </div>
+      </section>
+      <div class="center" style="padding-bottom:36px;">
+        <a class="btn btn-large waves-effect waves-light red" href="{{ base_url() }}/assets/pdf/DBK_Mission Statement.pdf" target="_blank">Download PDF Mission Statement</a>
+      </div>
+      <section class="section-image"></section>
+      <section class="values">
+        <h2 class="section-heading">Now is the time for Kindness to grow more Kindness.</h2>
+        <ol class="grid-list">
+          <li>
+            <h3>The vision is a SAFER world.</h3>
+          </li>
+          <li>
+            <h3>The method is KINDNESS.</h3>
+          </li>
+          <li>
+            <h3>The vehicle is YOU!</h3>
+          </li>
+        </ol>
+      </section>
+    </div>
+    <div id="team" class="col s12">
+      <section class="leadership-team">
+        <div class="section-heading">
+          <h2>Kindness Team</h2>
+        </div>
+        <div class="team-members">
+          <div class="team-member">
+            <div class="team-member-portrait">
+              <img src="{{ base_url() }}/assets/img/JPG/Gabriella-portrait.jpg" alt="Gabriella">
+            </div>
+            <div class="team-member-text">
+              <h3>Gabriella van Rij</h3>
+              <h4>Founder</h4>
+              <p>Born an orphan in Pakistan and adopted by a Dutch family, Gabriella van Rij has an undeniable story to tell. Drawing from groundbreaking science, her immense cross-cultural experience, and her signature humor, Gabriella inspires organizations to tap into the power of kindness—the most underutilized skill in today’s world. </p>
+              <a href="https://twitter.com/GabriellavanRij" target="_blank" rel="noopener"><i class="fab fa-twitter"></i>@Gabriellavanrij</a>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="team-member-portrait">
+              <img src="{{ base_url() }}/assets/img/JPG/Bobbie-portrait.jpg" alt="Bobbie">
+            </div>
+            <div class="team-member-text">
+              <h3>Bobbie Folsom</h3>
+              <h4>Business Manager</h4>
+              <p>After 20+ years as a small business owner of a hair salon, I’ve had my earful of the challenges and obstacles my clientele faced getting through their weeks, months, and years. As a cancer survivor myself, I’ve experienced my own dark nights, and I know that life is precious and can change in the blink of an eye.</p>
+              <a href="https://www.linkedin.com/in/bobbiefolsom/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="location" class="col s12">
+      <section class="intro-text">
+        <blockquote>
+          Our pursuit is to spread our movement globally.  We are happy to be headquartered in bustling Los Angeles, with contacts and partners all around the world.
+        </blockquote>
+      </section>
+      <hr>
+      <section class="location">
+        <div class="location-group">
+          <div class="location-text">
+            <div class="location-text-title">
+              <h2>Los Angeles</h2>
+              <p>The City of Los Angeles, often known by its initials L.A., is the cultural, financial, and commercial center of Southern California. With a U.S. Census-estimated 2016 population of 3,976,322, it is the second most populated city in the United States (after New York City).</p>
+            </div>
+            <a class="address" href="https://www.google.com/maps/place/Beverly+Hills,+CA+90210/@34.1003517,-118.4495651,13z/data=!3m1!4b1!4m5!3m4!1s0x80c2bc35fbd217ef:0xcf1ef9352700d95c!8m2!3d34.1030032!4d-118.4104684" target="_blank" rel="noopener">
+              <i class="material-icons left">location_on</i>
+              <address>
+                DaretobeKind - A Global Movement
+                <br>
+                Los Angeles, CA 90210
+              </address>
+            </a>
+          </div>
+          <div class="location-image">
+            <img src="{{ base_url() }}/assets/img/JPG/los-angeles-office.jpg" alt="LA Office">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

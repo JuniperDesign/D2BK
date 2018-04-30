@@ -1,0 +1,11 @@
+{% if flash.getMessage('success') %}
+  <span class="toast_success">You have successfully Signed Up! Welcome to the Kindness Movement!</span>
+{% endif %}
+
+{% if flash.getMessage('failure') %}
+  <span class="toast_failure">Looks like your email or password didn't match.</span>
+{% endif %}
+
+{% if flash.getMessage('error') %}
+  <span class="toast_error">Woah!  You gotta sign-in before doing that.</span>
+{% endif %}

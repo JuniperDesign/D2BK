@@ -1,0 +1,42 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+<!--Card with sign up form, should be horizonatlly centered to screen-->
+<div class="container">
+  <div class="row">
+    <div class="signupcomplete col s12 m10 l8 xl8">
+      <div class="card darken-1">
+        <div class="card-content">
+          <span class="card-title">Welcome Back!</span>
+          <div class="row">
+            <form action="{{ path_for('auth.signin') }}" method="post" class="col s12" autocomplete="off">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" name="email" value="{{ old.email }}" class="validate{{ errors.email ? ' invalid' : '' }}">
+                  <label for="email" class="{{ old.email ? 'active' : '' }}">Email</label>
+                  {% if errors.email %}
+                    <span class="helper-text" data-error="{{ errors.email | first }}"></span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" name="password" class="validate{{ errors.password ? ' invalid' : '' }}">
+                  <label for="password">Password</label>
+                  {% if errors.password %}
+                    <span class="helper-text" data-error="{{ errors.password | first }}"></span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="row">
+                <button type="submit" class="red waves-effect waves-light btn finish-signin" style="width:100%;">Sign me in!</button>
+              </div>
+              {{ csrf.field | raw }}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

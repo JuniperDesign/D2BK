@@ -1,0 +1,37 @@
+<!--Main Navigation-->
+<!-- Dropdown Structure -->
+<!--
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">Profile</a></li>
+    <li><a href="#!">Resources</a></li>
+    <li><a href="#!">Contact</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Sign Out</a></li>
+  </ul>
+-->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="{{ path_for('auth.signin') }}">Sign In</a></li>
+    <li><a href="#!">Resources</a></li>
+    <li class="divider"></li>
+    <li><a href="{{ path_for('contact') }}">Contact</a></li>
+  </ul>
+
+<nav class="nav-extended">
+  <div class="nav-wrapper">
+    <!--slide-out nav 100% width-->
+    <!--slide-out nav 100% width-->
+    <!--<a href="#" data-target="dtbk_menu_nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
+    <!--end slide out nav-->
+    <!--end slide out nav-->
+      <img class="brand-logo" src="{{ base_url() }}/assets/img/SVG/logo-shadow-blk1.svg" alt="DTBK">
+    <ul class="left hide-on-med-and-down" style="margin-left:75px;">
+      <li style="color:rgba(0,0,0,.87);text-transform:uppercase;font-family:George-Bold;">We <span style="color:#F44336;">Dare</span> you to be kind</li>
+    </ul>
+
+  </div>
+  <div class="nav-content">
+    <ul class="tabs">
+      <li class="tab"><a href="#uploadstory" class="active">Your Story</a></li>
+    </ul>
+  </div>
+</nav>

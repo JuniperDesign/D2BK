@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>#DaretobeKind a Global Movement</title>
+      <meta name="title" content="#DaretobeKind a Global Movement">
+      <meta name="description" content="The mission of “#DaretobeKind - a Global Movement” is to reveal how Kindness can be used in practical ways to build safer communities and healthier relationships.">
+      <meta name="theme-color" content="#212121">
+      <meta name="robots" content="noindex, nofollow">
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="{{ base_url() }}/css/materialize.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{ base_url() }}/css/app.css">
+  </head>
+  <body class="homepage">
+
+    {% include 'templates/partials/navigation.twig' %}
+
+    <section class="center">
+      <div class="container">
+        <div class="row">
+          <img class="responsive-img" style="width: 50%;" src="{{ base_url() }}/assets/img/SVG/custom-404.svg" alt="Oops, Something went wrong.">
+        </div>
+        <div class="row">
+          <h2>Oops, looks like we messed up!</h2>
+          <p>Don't worry, the problem is on our end.  In the meantime, check out some of our stories or go back to the home page!</p>
+          <ul style="display:flex; justify-content: center;">
+            <li style="padding: 10px;"><a class="red waves-effect waves-light btn" href="{{ path_for('home') }}">Go Home</a></li>
+            <li style="padding: 10px;"><a class="red waves-effect waves-light btn" href="{{ path_for('stories.storylist') }}">Read Up!</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <!-- Materialize Compiled and minified JavaScript -->
+  <script type="text/javascript" src="{{ base_url() }}/js/materialize.js"></script>
+  <script src="{{ base_url() }}/js/app.js"></script>
+  </body>
+</html>

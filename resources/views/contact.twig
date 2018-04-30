@@ -1,0 +1,79 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+<!--Card with sign up form, should be horizonatlly centered to screen-->
+<div class="container">
+  <div class="row">
+    <div class="signupcomplete col s12 m10 l8 xl8">
+      <div class="card darken-1" style="display:flex;">
+        <div class="card-content" style="padding-bottom:0;">
+          <span class="card-title" style="text-align:left;">Get in touch!</span>
+          <p style="text-align:left;">Got questions? Want to say something nice? Connect with us here.</p>
+          <div class="row">
+            <form action="{{ path_for('contact') }}" method="post" class="col s12" autocomplete="on">
+              <div class="row">
+                {% if errors.name %}
+                  <span>{{ errors.name | first }}</span>
+                {% endif %}
+                <div class="input-field col s12">
+                  <input id="name" type="text" name="name" value="{{ old.name }}" class="validate" required>
+                  <label for="name">Name</label>
+                </div>
+              </div>
+              <div class="row">
+                {% if errors.email %}
+                  <span>{{ errors.email | first }}</span>
+                {% endif %}
+                <div class="input-field col s12">
+                  <input id="email" type="email" name="email" value="{{ old.email }}" class="validate" required>
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" name="myMessage" class="materialize-textarea" data-length="120" style="max-height:200px;min-height:100px;"></textarea>
+                  <label for="textarea1">Your Message</label>
+                </div>
+              </div>
+              <div class="row">
+                  <button type="submit" class="red waves-effect waves-light btn finish-signin">Send</button>
+              </div>
+
+              {{ csrf.field | raw }}
+            </form>
+          </div>
+        </div>
+        <div class="card-content" style="padding-bottom:0;background:#f44336;display: flex;flex-direction: column;justify-content: center;">
+          <div class="center">
+            <div class="row">
+              <span class="card-title" style="text-align:center;color:#fff;">Contact Information</span>
+            </div>
+            <div class="row">
+              <a href="#modal1" class="btn-floating btn-large waves-effect white modal-trigger"><i class="large material-icons" style="color:rgba(0,0,0,.87);">help_outline</i></a>
+              <!-- Modal Structure -->
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Contact information</h4>
+                  <ul>
+                    <li><a href="tel:18448885463">1.844.888.KIND (1.844.888.5463)</a></li>
+                    <li><a href="tel:15634240392">1.563.424.0392</a></li>
+                    <li><a href="mailto:mailto:kind-team@daretobekindmovement.com">kind-team@daretobekindmovement.com</a></li>
+                  </ul>
+                </div>
+              </div>
+              <span style="display:block;color:#fff;">Click to view</span>
+            </div>
+            <div class="row">
+              <ul>
+                <li style="display:inline-block;"><a class="btn-floating red" href="https://www.facebook.com/daretobekindmovement/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+                <li style="display:inline-block;"><a class="btn-floating red" href="https://twitter.com/daretobekindmvt" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+                <li style="display:inline-block;"><a class="btn-floating red" href="https://www.instagram.com/daretobekindmovement/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

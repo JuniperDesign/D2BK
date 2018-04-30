@@ -1,0 +1,117 @@
+{% block content %}
+
+<section style="height:auto;padding:0;">
+  <div class="">
+    <div class="home-cols">
+      <div class="home-column-container">
+        <div class="home-column-inner">
+          <div class="">
+            <div class="wpb_wrapper">
+              <div class="home-head">
+                <div class="home-head-content">
+                  <div class="home-headline-wrapper">
+                    <div class="home-headline">
+                      <div class="block-title-wrapper">
+                          <a href="#">
+                            <div class="block-title">
+                              <div class="lines line_lt">
+                                <span></span>
+                              </div>
+                              <div class="lines line_l">
+                                <span></span>
+                              </div>
+                              <div class="lines line_lb">
+                                <span></span>
+                              </div>
+                              <div class="lines line_rt">
+                                <span></span>
+                              </div>
+                              <div class="lines line_r">
+                                <span></span>
+                              </div>
+                              <div class="lines line_rb">
+                                <span></span>
+                              </div>
+                              <h1 style="margin:0;">Silence is Complicity</h1>
+                            </div>
+                          </a>
+                      </div>
+                      <p class="center">Speak up. Be a beacon of hope for someone else.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="height: auto;padding-top:60px;">
+  <div class="container">
+    <div class="row">
+      <h1 style="font-size: 38px;margin-bottom: 10px;">Every ugly, sad, or beautiful story reveals the footprints we leave on each other</h1>
+      <h3 style="font-size: 24px;margin-top:0;color:rgba(0,0,0,.54);font-weight: 600;">Recent Stories</h3>
+    </div>
+    <hr>
+    <div class="row">
+      {% for post in posts | slice(0, 6) %}
+      <div class="col s12 m6 l4 cards">
+        <!-- Card Content -->
+        <div class="card">
+          <a href="{{ path_for('stories.story', { 'postId': post.id }) }}">
+            {% if (post.usermeta.category == "story") and (post.file_path is not null) %}
+              <div class="card-image" style="background-image:url('{{ base_url() }}/{{ post.file_path }}')"></div>
+            {% else %}
+              <div class="card-image" style="background-image:url('{{ base_url() }}/assets/img/SVG/darkbanner-shadow-white1.svg')"></div>
+            {% endif %}
+          </a>
+          <div class="card-content">
+            <div class="card-flex">
+              <div class="card-flex-wrapper">
+                <div class="card-header">
+                  <a href="{{ path_for('stories.story', { 'postId': post.id }) }}">
+                    <h3 class="card-title" style="text-transform:capitalize;">{{ post.title }}</h3>
+                  </a>
+                </div>
+                <a href="{{ path_for('stories.story', { 'postId': post.id }) }}">
+                  <h4>{{ post.body[:50] ~ (post.body|length > 50 ? '…') }}</h4>
+                </a>
+              </div>
+            </div>
+            <div class="author-flex">
+              <div class="avatar-wrapper">
+                <div class="avatar">
+                    <img src="{{ base_url() }}/assets/img/PNG/default-profile.png" alt="default-profile" class="circle">
+                </div>
+              </div>
+              <div class="author-info-flex">
+                <div class="author-info-wrapper">
+                  <div class="author-name-wrapper">
+                    <div class="author-name">
+                      <p>{{ post.usermeta.username }}</p>
+                    </div>
+                  </div>
+                  <div class="author-location-wrapper">
+                    <div class="author-location">
+                      <p>{{ post.usermeta.city }}, {{ post.usermeta.country }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row center">
+      <a class="btn btn-large waves-effect waves-light red" href="{{ path_for('stories.storylist') }}">Read up!</a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

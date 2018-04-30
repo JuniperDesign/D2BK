@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>#DaretobeKind a Global Movement</title>
+    <meta name="title" content="#DaretobeKind a Global Movement">
+    <meta name="description" content="The mission of “#DaretobeKind - a Global Movement” is to reveal how Kindness can be used in practical ways to build safer communities and healthier relationships.">
+    <meta name="theme-color" content="#212121">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="{{ base_url() }}/css/materialize.min.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{ base_url() }}/css/app.css">
+  </head>
+  <body>
+
+    {% include 'templates/partials/navigation.twig' %}
+
+    <section>
+      {% block content %}{% endblock %}
+    </section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <!-- Materialize Compiled and minified JavaScript -->
+  <script type="text/javascript" src="{{ base_url() }}/js/materialize.min.js"></script>
+  <script src="{{ base_url() }}/js/app.js"></script>
+  <script type="text/javascript">
+    var toastSuccess = document.querySelector('.toast_success');
+    M.toast({html: toastSuccess});
+
+    var toastFailure = document.querySelector('.toast_failure');
+    M.toast({html: toastFailure});
+
+    var toastError = document.querySelector('.toast_error');
+    M.toast({html: toastError});
+
+  </script>
+  </body>
+</html>

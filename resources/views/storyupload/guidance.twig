@@ -1,0 +1,97 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+<!--Main Container-->
+<section class="section section-g">
+  <div class="container">
+    <div class="row">
+      <div class="col l10">
+        <div class="card">
+          <div class="row">
+            <div class="col s12 m4">
+              <div class="section">
+                <div class="center promo promo-example">
+                  <img src="{{ base_url() }}/assets/img/SVG/guidancemodule_icons-01.svg" alt="post story icon">
+                  <p class="promo-caption">Post your story</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="section">
+                <div class="center promo promo-example">
+                  <img src="{{ base_url() }}/assets/img/SVG/guidancemodule_icons-02.svg" alt="create dialogue icon">
+                  <p class="promo-caption">Create a dialogue</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="section">
+                <div class="center promo promo-example">
+                  <img src="{{ base_url() }}/assets/img/SVG/guidancemodule_icons-03.svg" alt="spread kindness icon">
+                  <p class="promo-caption">BE the difference</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <div class="section center guide-btns">
+                <a href="{{ path_for('stories.storylist') }}" class="waves-effect waves-light btn-large red">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <div class="section center">
+                <p style="font-weight:bold;">Why share your story?</p>
+                <p class="light">Because we become aware: (a) we are not alone, (b) we are capable and (c) we are the solution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col l2">
+        <div class="section">
+          <p>Questions?</p>
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header">
+                What kind of story can I post?
+              </div>
+              <div class="collapsible-body">
+                <span>A first- or second-hand experience or story that touched your heart. Or, something you are struggling with in your personal life.</span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">
+                What else can I do on this platform?
+              </div>
+              <div class="collapsible-body">
+                <span>If you read a story that resonates with you, share your thoughts in the comments! Share stories with others who could use a boost!</span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">
+                What's up next?
+              </div>
+              <div class="collapsible-body">
+                <span>Web series on social issues. A kindness map. And more! So stay tuned!</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <p>Why this site?</p>
+            <ul class="collection">
+              <li class="collection-item avatar" style="padding:0;">
+                <p>The vision is a SAFER world. The method is KINDNESS. The vehicle is YOU!</p>
+                <p>Questions? <a href="#!">Talk to us!</a></p>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

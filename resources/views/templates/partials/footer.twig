@@ -1,0 +1,60 @@
+<!--FOOTER-->
+<footer class="page-footer">
+   <div class="footer-wrapper container">
+     <div class="row">
+       <div class="col s12 m12 l3">
+         <a href="{{ path_for('home') }}"><img src="{{ base_url() }}/assets/img/SVG/logo-shadow-white.svg" alt="DTBK-logo" style="width:30%;"></a>
+         <p class="grey-text text-lighten-3" style="font-family:George-Regular;font-weight:400;">The mission of "DareToBeKind - A Global Movement" is to reveal how Kindness can be used in practical ways to build safer communites and healthier relationships.</p>
+       </div>
+       <div class="footer-links col s12 m12 l9">
+         <div class="footer-links-wrapper col s12 m4 l4">
+           <div class="right">
+             <h5 class="red-text">Resources</h5>
+             <ul>
+               <li><a class="grey-text text-lighten-3" href="{{ path_for('globe') }}">Around the Globe</a></li>
+               <li><a class="grey-text text-lighten-3" href="{{ path_for('kindness') }}">Kindness Instigators</a></li>
+               <!--<li><a class="grey-text text-lighten-3" href="{{ path_for('err') }}">How to Submit Your Story</a></li>-->
+             </ul>
+           </div>
+         </div>
+         <div class="footer-links-wrapper col s12 m4 l4">
+           <div class="right">
+             <h5 class="red-text">Get Involved</h5>
+             <ul>
+               <li><a class="grey-text text-lighten-3" href="{{ path_for('auth.signup') }}">Share Your Story</a></li>
+               <li><a class="grey-text text-lighten-3" href="{{ path_for('stories.storylist') }}">Read & Comment</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="footer-links-wrapper col s12 m4 l4">
+           <div class="right">
+             <h5 class="red-text">Connect With Us</h5>
+             <ul>
+               <li><a class="grey-text text-lighten-3" href="{{ path_for('mission') }}">Our Mission</a></li>
+               <li><a class="grey-text text-lighten-3" href="{{ path_for('evolution') }}">Our Evolution</a></li>
+               <li><a class="grey-text text-lighten-3" href="{{ path_for('contact') }}">Contact Us</a></li>
+               <ul class="social">
+                 <li><a href="https://www.facebook.com/daretobekindmovement/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+                 <li><a href="https://twitter.com/daretobekindmvt" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+                 <li><a href="https://www.instagram.com/daretobekindmovement/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+                 <li><a href="https://bit.ly/2IHgIjn" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+               </ul>
+             </ul>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="divider container"></div>
+   <div class="footer-copyright center">
+     <div class="container">
+     Copyright © 2018 <a class="gab-global" href="https://www.gabriella.global/" target="_blank" rel="noopener">Gabriella van Rij</a> and DareToBe<img src="{{ base_url() }}/assets/img/PNG/K_logo_white.png" alt="K logo"/>ind®. All Rights Reserved.
+     <div class="copyright-links">
+       <!--<a class="grey-text text-lighten-4" href="#!">Partners</a>-->
+       <a class="grey-text text-lighten-4" href="{{ path_for('contribution') }}">Terms of Use</a>
+       <a class="grey-text text-lighten-4" href="{{ path_for('privacy') }}">Privacy</a>
+       <a class="grey-text text-lighten-4" href="{{ path_for('credits') }}">Credits</a>
+     </div>
+     </div>
+   </div>
+ </footer>

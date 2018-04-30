@@ -1,0 +1,141 @@
+{% extends 'templates/upload.twig' %}
+
+{% block content %}
+<div class="container container-u">
+  <div class="row">
+    <h3>Write your story</h3>
+    <hr>
+    <div class="col s12 l9">
+      <div class="card darken-1">
+        <div class="card-content">
+          <div class="row">
+            {% if usermeta.category == "story" %}
+              <form class="col s12" action="{{ path_for('storyupload.upload') }}" method="post" enctype="multipart/form-data">
+                <div id="uploadstory">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="title" type="text" name="title" value="{{ old.title }}" data-length="80" class="validate{{ errors.title ? ' invalid' : '' }}">
+                      <label for="title" class="{{ old.title ? 'active' : '' }}">Title</label>
+                      {% if errors.title %}
+                        <span class="helper-text" data-error="{{ errors.title | first }}"></span>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 storytext">
+                      <textarea id="main_story" name="body" value="{{ old.body }}"class="materialize-textarea validate{{ errors.body ? ' invalid' : '' }}" data-length="2500"></textarea>
+                      <label for="body" class="{{ old.body ? 'active' : '' }}">Your Story</label>
+                      {% if errors.body %}
+                        <span class="helper-text" data-error="{{ errors.body | first }}"></span>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <div id="uploadpicvid">
+                  <div class="row">
+                    <div class="input-field col s12 file-field">
+                      <div class="btn white black-text">
+                        <span>Upload Image</span>
+                        <input type="file" name="userfile">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                        <span class="helper-text">Max: 100MB</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button type="submit" name="button" class="waves-effect waves-light btn red" style="float:right">Submit Your Story</button>
+
+                    {{ csrf.field | raw }}
+
+                  </div>
+                </div>
+              </form>
+            {% else %}
+            <form class="col s12" action="{{ path_for('storyupload.upload') }}" method="post" enctype="multipart/form-data">
+              <div id="uploadstory">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="title" type="text" name="title" value="{{ old.title }}" data-length="80" class="validate{{ errors.title ? ' invalid' : '' }}">
+                    <label for="title" class="{{ old.title ? 'active' : '' }}">Title</label>
+                    {% if errors.title %}
+                      <span class="helper-text" data-error="{{ errors.title | first }}"></span>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div id="uploadpicvid">
+                <div class="row">
+                  <div class="input-field col s12 file-field">
+                    <div class="btn white black-text">
+                      <span>Upload Video</span>
+                      <input type="file" name="userfile">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text">
+                      <span class="helper-text">Max: 100MB</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" name="button" class="waves-effect waves-light btn red" style="float:right">Submit Your Story</button>
+
+                  {{ csrf.field | raw }}
+
+                </div>
+              </div>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 l3 hide-on-med-and-down">
+      <div class="card darken-1">
+        <div class="card-content">
+          <div class="row">
+            <video width="100%"class="materialboxed hide-on-med-and-down" src="videofile.ogg" poster="img/Bobbie_story_volleyball.jpg" controls>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="section">
+          <p>Questions?</p>
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header">
+                What kind of story can I post?
+              </div>
+              <div class="collapsible-body">
+                <span>A first- or second-hand experience or story that touched your heart. Or, something you are struggling with in your personal life.</span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">
+                What else can I do on this platform?
+              </div>
+              <div class="collapsible-body">
+                <span>If you read a story that resonates with you, share your thoughts in the comments! Share stories with others who could use a boost!</span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">
+                What's up next?
+              </div>
+              <div class="collapsible-body">
+                <span>Web series on social issues. A kindness map. And more! So stay tuned!</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

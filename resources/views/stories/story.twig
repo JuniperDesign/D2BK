@@ -1,0 +1,96 @@
+{% extends 'templates/storytemplate.twig' %}
+
+{% block content %}
+<!--Avatar w/ username info COLLECTION-->
+<div class="container collectioncontainer">
+  <div class="row">
+    <ul class="collection">
+      <li class="collection-item avatar">
+        <img src="{{ base_url() }}/assets/img/PNG/default-profile.png" alt="default-profile" class="circle">
+        <span class="title">{{ post.username }}</span>
+        <p>{{ post.city }}, {{ post.country }} <br>
+           {{ post.created_at|date("M d, Y") }}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--Image/Video/Audio-->
+<div class="container mediacontainer">
+  <div class="row">
+    {% if (post.usermeta.category == "story") and (post.file_path is not null) %}
+      <div class="media-wrapper" style="background-image:url('{{ base_url() }}/{{ post.file_path }}')"></div>
+    {% elseif post.usermeta.category == "video" %}
+      <div class="media-wrapper">
+        <video src="{{ base_url() }}/{{ post.file_path }}" poster="{{ base_url() }}/assets/img/SVG/darkbanner-shadow-white1.svg" controls controlsList="nodownload" style="width:100%;height:100%;"></video>
+      </div>
+    {% else %}
+      <div class="media-wrapper" style="background-image:url('{{ base_url() }}/assets/img/SVG/darkbanner-shadow-white1.svg')"></div>
+    {% endif %}
+    </div>
+  </div>
+</div>
+
+<!--Main body, Title/Story-->
+<div class="container storycontainer">
+  <!--Sticky social icons-->
+  <div class="social-wrapper">
+    <ul>
+      <li>
+        <span>22K</span>
+      </li>
+      <li>
+        <a class="btn-floating btn-large waves-effect social-white"><i class="material-icons" style="font-size: 2.5rem;">sentiment_very_satisfied</i></a>
+      </li>
+      <li>
+        <div class="btn-floating btn-small waves-effect social-white" data-href="http://dev.daretobekindmovement.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a title="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdaretobekindmovement.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-f" style="color:rgba(0,0,0,.87);"></i></a></div>
+      </li>
+      <li>
+        <a href="https://twitter.com/intent/tweet" class="btn-floating btn-small waves-effect social-white" data-text="Every ugly, sad, or beautiful story reveals the footprints we leave on each other. Join the movement, comment, and share your story!" data-via="daretobekindmvt" data-hashtags="DareToBeKind" data-show-count="false" title="Share on Twitter"><i class="fab fa-twitter" style="color:rgba(0,0,0,.87);"></i></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <!--<a class="btn-floating btn-small waves-effect social-white"><i class="fab fa-twitter" style="color:rgba(0,0,0,.87);"></i></a>-->
+      </li>
+      <li>
+        <a class="btn-floating btn-small waves-effect social-white"><i class="material-icons" style="color:rgba(0,0,0,.87);">email</i></a>
+      </li>
+      <li>
+        <a id="bookmarkme" class="btn-floating btn-small waves-effect social-white" href="#" rel="sidebar" title="Bookmark this story to read later"><i class="material-icons">bookmark</i></a>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h2 style="text-transform:capitalize;">{{ post.title }}</h2>
+      <p class="story_body">{{ post.body|nl2br }}</p>
+    </div>
+  </div>
+  <div id="small-divider" class="small-divider">
+    <hr class="small-divider"></hr>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <!--<p style="color:rgba(0,0,0,.54);">Edited by <a href="#" style="text-decoration:underline;">Tomoko</a></p>-->
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="row">
+    <div class="col s12">
+      <p style="font-weight:bold;font-size:14px;">We dare you to be kind.  It only takes one share to start the chain reaction.</p>
+    </div>
+    <div class="col s12 story-social-links">
+      <div class="" style="display:flex;align-items:center;">
+        <div class="flex1">
+          <a class="btn-floating btn-large waves-effect social-white" style="margin-right: 16px;"><i class="material-icons" style="font-size: 2.5rem;">sentiment_very_satisfied</i></a>
+          <span>22K</span>
+        </div>
+        <div class="flex0">
+          <a class="btn-floating btn-small waves-effect social-white disqus-comment-count" data-disqus-url="{{ path_for('stories.story', { 'postId': post.id }) }}#disqus_thread" style="margin-right:16px;"><i class="material-icons">comment</i></a>
+          <a class="btn-floating btn-small waves-effect social-white" style="margin-right:16px;" title="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdev.daretobekindmovement.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-f" style="color:rgba(0,0,0,.87);"></i></a>
+          <a href="https://twitter.com/intent/tweet" class="btn-floating btn-small waves-effect social-white" data-text="Every ugly, sad, or beautiful story reveals the footprints we leave on each other. Join the movement, comment, and share your story!" data-via="daretobekindmvt" data-hashtags="DareToBeKind" data-show-count="false"><i class="fab fa-twitter" style="color:rgba(0,0,0,.87);" title="Share on Twitter"></i></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <!--<a class="btn-floating btn-small waves-effect social-white"><i class="fab fa-twitter" style="color:rgba(0,0,0,.87);"></i></a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

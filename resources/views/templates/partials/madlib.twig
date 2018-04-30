@@ -1,0 +1,159 @@
+<!--Madlib signup-->
+<div class="section" style="background-color:#f5f5f5;">
+  <div class="container">
+    <div class="row center">
+      <h3 style="font-size: 24px;">Your story can help millions make the shift from bystander syndrome to becoming an active witness.</h3>
+    </div>
+    <!--Tablet and Desktop viewport-->
+    <div class="row hide-on-small-only">
+      <form class="madlib" action="{{ path_for('auth.signup') }}" method="post" autocomplete="on">
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>My name is </p>
+            <div class="form-group input-field">
+              <input type="text" name="name" id="name" class="validate{{ errors.name ? ' invalid' : '' }}" value="{{ old.name }}">
+              <label for="name" class="{{ old.name ? 'active' : '' }}">First Name</label>
+              {% if errors.name %}
+                <span class="helper-text" data-error="{{ errors.name | first }}"></span>
+              {% endif %}
+
+            </div>
+            <p> but I'd like to go by</p>
+            <div class="form-group input-field">
+              <input type="text" name="username" id="username" class="validate{{ errors.username ? ' invalid' : '' }}" value="{{ old.username }}">
+              <label for="username">Username</label>
+              {% if errors.username %}
+                <span class="helper-text" data-error="{{ errors.username | first }}"></span>
+              {% endif %}
+            </div>
+            <p> .</p>
+          </div>
+        </div>
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>I'm from </p>
+            <div class="form-group input-field">
+              <input type="text" name="city" id="city" class="validate {{ errors.city ? 'invalid' : '' }}" value="{{ old.city }}">
+              <label for="city" data-success="Perfect!">City</label>
+              {% if errors.city %}
+                <span class="helper-text" data-error="{{ errors.city | first }}"></span>
+              {% endif %}
+            </div>
+            <p> ,</p>
+            <div class="form-group input-field">
+              <input type="text" name="country" id="country" class="validate {{ errors.country ? 'invalid' : '' }}" value="{{ old.country }}" autocomplete="country">
+              <label for="country" data-success="Perfect!">Country</label>
+              {% if errors.country %}
+                <span class="helper-text" data-error="{{ errors.country | first }}"></span>
+              {% endif %}
+            </div>
+            <p> .</p>
+          </div>
+        </div>
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>You can share my location </p>
+            <div class="form-group input-field">
+              <select id="share_location" name="share_location">
+                <option value="1" selected>Yes</option>
+                <option value="2">No</option>
+              </select>
+            </div>
+            <p> and put me on the map!</p>
+          </div>
+        </div>
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>I have a kindness </p>
+            <div class="form-group input-field">
+              <select class="" name="category">
+                <option value="story">Story</option>
+                <option value="video">Video</option>
+              </select>
+            </div>
+            <p> that I'd like to share.</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-large waves-effect waves-light red">Upload My Story</button>
+
+        {{ csrf.field | raw }}
+
+      </form>
+    </div>
+    <!--Mobile viewports-->
+    <div class="row show-on-small hide-on-med-and-up">
+      <form class="madlib" action="{{ path_for('auth.signup') }}" method="post" autocomplete="on">
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>My name is </p>
+            <div class="form-group input-field">
+              <input type="text" name="name" id="name" class="validate{{ errors.name ? ' invalid' : '' }}" value="{{ old.name }}">
+              <label for="name" class="{{ old.name ? 'active' : '' }}">First Name</label>
+              {% if errors.name %}
+                <span class="helper-text" data-error="{{ errors.name | first }}"></span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>But I'll go by </p>
+            <div class="form-group input-field">
+              <input type="text" name="username" id="username" class="validate{{ errors.username ? ' invalid' : '' }}" value="{{ old.username }}">
+              <label for="username">Username</label>
+              {% if errors.username %}
+                <span class="helper-text" data-error="{{ errors.username | first }}"></span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>I'm from </p>
+            <div class="form-group input-field">
+              <input type="text" name="city" id="city" class="validate {{ errors.city ? 'invalid' : '' }}" value="{{ old.city }}">
+              <label for="city" data-success="Perfect!">City</label>
+              {% if errors.city %}
+                <span class="helper-text" data-error="{{ errors.city | first }}"></span>
+              {% endif %}
+            </div>
+            <p> ,</p>
+            <div class="form-group input-field">
+              <input type="text" name="country" id="country" class="validate {{ errors.country ? 'invalid' : '' }}" value="{{ old.country }}" autocomplete="country">
+              <label for="country" data-success="Perfect!">Country</label>
+              {% if errors.country %}
+                <span class="helper-text" data-error="{{ errors.country | first }}"></span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>Share location </p>
+            <div class="form-group input-field">
+              <select id="share_location" name="share_location">
+                <option value="1" selected>Yes</option>
+                <option value="2">No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row madlib-wrapper">
+          <div class="form-group-wrapper">
+            <p>I have a kindness </p>
+            <div class="form-group input-field">
+              <select class="" name="category">
+                <option value="story">Story</option>
+                <option value="video">Video</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-large waves-effect waves-light red">Upload My Story</button>
+
+        {{ csrf.field | raw }}
+
+      </form>
+    </div>
+  </div>
+</div>

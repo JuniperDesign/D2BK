@@ -1,0 +1,123 @@
+<ul id="dtbk_menu_nav" class="sidenav" style="width: 100%;">
+  <div id="" class="dtbk_menu_nav">
+    <div id="dtbk_menu_nav_section">
+      <a class="sidenav-close" href="#!"><i class="material-icons">close</i></a>
+      <div class="l-section-h i-cf">
+        <div class="headline hide-on-med-and-down">
+          <h2>The vision is a <span style="color: #f44336;">SAFER</span> world.<br>The method is <span style="color: #f44336;">KINDNESS</span>.<br>The vehicle is <span style="color: #f44336;">YOU</span>!</h2>
+        </div>
+        <div class="content">
+          <div class="menu-links menu menu--adsila">
+            <ul>
+              <li>
+                <a class="menu__item" href="{{ path_for('home') }}">
+                  <span class="menu__item-name">Home</span>
+                  <span class="menu__item-label">Go back to our homepage</span>
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="{{ path_for('auth.signup') }}">
+                  <span class="menu__item-name">Share Your Story</span>
+                  <span class="menu__item-label">Get a conversation started</span>
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="{{ path_for('stories.storylist') }}">
+                  <span class="menu__item-name">Top Stories</span>
+                  <span class="menu__item-label">Read others' stories</span>
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="{{ path_for('mission') }}">
+                  <span class="menu__item-name">Who We Are</span>
+                  <span class="menu__item-label">Find out what we stand for</span>
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="{{ path_for('contact') }}">
+                  <span class="menu__item-name">Contact Us</span>
+                  <span class="menu__item-label">Send us a message</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu-footer">
+          <ul>
+            <li><a href="https://www.facebook.com/daretobekindmovement/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com/daretobekindmvt" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/daretobekindmovement/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://bit.ly/2IHgIjn" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ul>
+
+
+<!--Main Navigation-->
+<!-- Dropdown Structure -->
+<div class="navbar-fixed" style="height:auto;">
+
+  {% if auth.check %}
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">Profile</a></li>
+      <li><a href="#!">Resources</a></li>
+      <li><a href="{{ path_for('contact') }}">Contact</a></li>
+      <li class="divider"></li>
+      <li><a href="{{ path_for('auth.signout') }}">Sign Out</a></li>
+    </ul>
+  {% else %}
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="{{ path_for('auth.signin') }}">Sign In</a></li>
+      <li><a href="#!">Resources</a></li>
+      <li class="divider"></li>
+      <li><a href="{{ path_for('contact') }}">Contact</a></li>
+    </ul>
+  {% endif %}
+
+  <nav style="overflow:visible !important;">
+    <div class="nav-wrapper">
+      <!--slide-out nav 100% width-->
+      <a href="#" data-target="dtbk_menu_nav" class="sidenav-trigger" style="z-index:2;"><i class="material-icons">menu</i></a>
+      <!--end slide out nav-->
+      <a href="{{ path_for('home') }}" class="brand-logo">
+        <img src="{{ base_url() }}/assets/img/SVG/logo-shadow-blk1.svg" alt="DTBK">
+      </a>
+      <ul class="left hide-on-med-and-down slogan" style="margin-left:60px;">
+        <li><a style="color:rgba(0,0,0,.87);text-transform:uppercase;font-family:George-Bold;" href="{{ path_for('home') }}">We <span style="color:#F44336;">Dare</span> you to be kind</a></li>
+      </ul>
+
+      {% if auth.check %}
+        <ul class="right">
+          <li class="left hide-on-med-and-down" style="color: rgba(0,0,0,.87);">Welcome Back!</li>
+          <li class="hide-on-small-only"><a href="#"><i class="material-icons left">account_circle</i>{{ auth.user.name }}</a></li>
+      <!-- Dropdown Trigger -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons">more_vert</i></a></li>
+        </ul>
+      {% else %}
+        <ul class="right">
+          <li class="left hide-on-med-and-down" style="color: rgba(0,0,0,.87);">BE the difference!</li>
+          <li class="hide-on-small-only"><a class="btn waves-effect waves-light red" href="{{ path_for('auth.signup') }}" style="color:#fff;">Upload Your Story</a></li>
+          <li class="hide-on-med-and-up"><a class="btn waves-effect waves-light red" href="{{ path_for('auth.signup') }}" style="color:#fff;">Upload</a></li>
+          <li><a href="{{ path_for('auth.signin') }}">LOGIN</a></li>
+        </ul>
+      {% endif %}
+    </div>
+  </nav>
+</div>
+
+<!--FIXED ACTION BUTTON (FAB) for shares/likes-->
+<div class="fixed-action-btn hide-on-small-only">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">share</i>
+  </a>
+  <ul>
+    <li><a href="https://www.facebook.com/daretobekindmovement/" class="btn-floating red" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="https://twitter.com/daretobekindmvt" class="btn-floating red" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+    <li><a class="btn-floating red" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a></li>
+    <li><a href="https://www.instagram.com/daretobekindmovement/" class="btn-floating red" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+    <li><a href="https://bit.ly/2IHgIjn" class="btn-floating red" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+  </ul>
+</div>

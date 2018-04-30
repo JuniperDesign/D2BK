@@ -1,0 +1,48 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+<!--Card with sign up form, should be horizonatlly centered to screen-->
+<div class="container">
+  <div class="row">
+    <div class="signupcomplete col s12 m10 l8 xl8">
+      <div class="card darken-1">
+        <div class="card-content" style="padding-bottom:0;">
+          <span class="card-title">Thank you for submitting your story!</span>
+          <p style="color: rgba(0,0,0,.54);">Your story is zipping speedily to our team, who will quickly review your submission. Check back soon to see your story featured on our site!  Complete your setup by adding your email and password so you can take full control of your profile.</p>
+          <div class="row">
+            <form action="{{ path_for('auth.completesignup') }}" method="post" class="col s12" autocomplete="off">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" name="email" value="{{ old.email }}" class="validate{{ errors.email ? ' invalid' : '' }}">
+                  <label for="email" class="{{ old.email ? 'active' : '' }}">Email</label>
+                  <span class="helper-text">We ask for your email address only so you can login to submit more content. It will never be used for spam or for purposes outside of the #DaretobeKind site.</span>
+                  {% if errors.email %}
+                    <span class="helper-text" data-error="{{ errors.email | first }}"></span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" name="password" class="validate{{ errors.password ? ' invalid' : '' }}">
+                  <label for="password">Password</label>
+                  <span class="helper-text">Do your best to come up with a secure password.  Please, no birthdays.</span>
+                  {% if errors.password %}
+                    <span class="helper-text" data-error="{{ errors.password | first }}"></span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="row">
+                  <button type="submit" class="red waves-effect waves-light btn finish-signin">Finish Setup</button>
+              </div>
+              {{ csrf.field | raw }}
+            </form>
+          </div>
+        </div>
+        <div class="card-action">
+          <p>By clicking "FINISH SETUP", you are agreeing to our <a href="{{ path_for('privacy') }}">Privacy Policy</a> and <a href="{{ path_for('contribution') }}">Terms & Conditions</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
